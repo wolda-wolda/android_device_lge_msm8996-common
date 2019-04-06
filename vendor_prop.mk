@@ -186,7 +186,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
     persist.radio.NO_STAPA=1 \
-    persist.radio.VT_HYBRID_ENABLE=1
+    persist.radio.VT_HYBRID_ENABLE=1 \
+    persist.radio.aosp_usr_pref_sel=true
 
 # Security Patch Level
 PRODUCT_PROPERTY_OVERRIDES += \

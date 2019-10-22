@@ -52,11 +52,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.video.ubwc=0 \
     persist.vendor.camera.expose.aux=1
 
-
 # Charger
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.charger.enable_suspend=false \
     persist.vendor.hvdcp.allow_opti=1
+
 # CNE and DPM
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.cne.feature=1 \
@@ -206,6 +206,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sensors.wul_thresh2=15 \
     persist.sensors.wul_delay=3000 \
     persist.sensors.onhand.en=0
+
+# Settings app
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true
 
 # Tethering
 PRODUCT_PROPERTY_OVERRIDES += \

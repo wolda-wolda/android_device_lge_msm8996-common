@@ -478,23 +478,19 @@ vendor/lib64/lib-uceservice.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so
 
-# Sensors
+# Sensors from Stcok H870 V20J
 vendor/bin/sensors.qcom:vendor/bin/sensors.qti
 vendor/lib/hw/activity_recognition.msm8996.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
-vendor/lib/libsensor_test.so
-vendor/lib/libsensor_thresh.so
-vendor/lib/libsensor_user_cal.so
 vendor/lib/sensors.ssc.so
+vendor/lib/sensor_calibrate.so
 vendor/lib64/hw/activity_recognition.msm8996.so
 vendor/lib64/libsensor1.so
 vendor/lib64/libsensor_reg.so
-vendor/lib64/libsensor_test.so
-vendor/lib64/libsensor_thresh.so
-vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
 vendor/lib64/hw/sensors.vr.so
+vendor/lib64/sensor_calibrate.so
 
 # Sysnode from Stock H870 V20I
 framework/vendor.lge.hardware.sysnode-V1.0-java.jar:vendor/framework/vendor.lge.hardware.sysnode-V1.0-java.jar

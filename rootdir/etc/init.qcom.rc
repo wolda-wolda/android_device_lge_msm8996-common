@@ -130,6 +130,9 @@ on boot
     # Bring up CPUs
     start vendor.power-sh
 
+    #enable camera read sensors data
+    setprop persist.camera.gyro.disable 0
+
     # Set permissions by node reads by dumpstate
     chmod 0644 /sys/devices/system/cpu/present
     chmod 0644 /sys/devices/system/cpu/online
@@ -406,8 +409,7 @@ on post-fs-data
     chmod 2777 /dev/socket/qdma
 
     # Create folder for mm-qcamera-daemon
-    mkdir /data/media 0770 media_rw media_rw
-    chown media_rw media_rw /data/media
+    mkdir /data/misc/camera 0770 camera camera
 
     # Create directory for tftp
     mkdir /data/vendor/tombstones 0771 system system
@@ -635,7 +637,6 @@ on property:persist.debug.trace=1
 
 on property:vold.decrypt=trigger_restart_framework
     restart vendor.audio-hal-2-0
-    restart vendor.camera-provider-2-4
     start vendor.qcom-c_main-sh
     start config_bt_addr
     start config_bluetooth
@@ -904,15 +905,6 @@ on configure-cpuset
     write /dev/cpuset/background/cpus 0
     write /dev/cpuset/system-background/cpus 0-2
     write /dev/cpuset/top-app/cpus 0-3
-
-    # Add a cpuset for the camera daemon
-    # we want all cores for camera
-    mkdir /dev/cpuset/camera-daemon
-    write /dev/cpuset/camera-daemon/cpus 0-3
-    write /dev/cpuset/camera-daemon/mems 0
-    chown system system /dev/cpuset/camera-daemon
-    chown system system /dev/cpuset/camera-daemon/tasks
-    chmod 0664 /dev/cpuset/camera-daemon/tasks
     
     # Update DVR cpusets to runtime values.
     write /dev/cpuset/kernel/cpus 0,1
@@ -938,9 +930,3 @@ on property:vendor.opengles.version=*
     #Set gpu available frequencies property
 on property:vendor.gpu.available_frequencies=*
     setprop ro.vendor.gpu.available_frequencies ${vendor.gpu.available_frequencies}
-
-on property:init.svc.media=restarting
-    restart vendor.qcamerasvr
-
-on property:init.svc.servicemanager=restarting
-    restart vendor.qcamerasvr

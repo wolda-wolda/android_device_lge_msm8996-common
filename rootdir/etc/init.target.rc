@@ -178,6 +178,11 @@ service vendor.energy-awareness /vendor/bin/energy-awareness
     group system
     oneshot
 
+service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
+    class main
+    user root
+    group system wakelock
+
 service vendor.perfd /vendor/bin/perfd
     class main
     user root

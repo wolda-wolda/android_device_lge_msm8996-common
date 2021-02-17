@@ -19,3 +19,4 @@ allow init sysfs:dir { create };
 allow init system_file:file { execute_no_trans };
 allow init vendor_file:file { execute_no_trans };
 allow init hwservicemanager:binder { call transfer };
+allow init sysfs:dir create;

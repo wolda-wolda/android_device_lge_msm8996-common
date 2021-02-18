@@ -133,6 +133,7 @@ on boot
 
     #enable camera read sensors data
     setprop persist.camera.gyro.disable 0
+    setprop init.svc.console stopped
 
     # Set permissions by node reads by dumpstate
     chmod 0644 /sys/devices/system/cpu/present

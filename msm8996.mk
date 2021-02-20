@@ -130,7 +130,8 @@ PRODUCT_PACKAGES += \
     init.qcom.sensors.sh \
     init.qcom.usb.rc \
     init.target.rc \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    init.class_main.sh
 
 # Display
 PRODUCT_PACKAGES += \

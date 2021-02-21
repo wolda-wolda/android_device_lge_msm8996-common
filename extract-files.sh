@@ -32,6 +32,9 @@ function blob_fixup() {
     vendor/lib64/libwvhidl.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
         ;;
+    vendor/lib/hw/vulkan.msm8996.so | vendor/lib64/hw/vulkan.msm8996.so)
+        sed -i -e 's|vulkan.msm8953.so|vulkan.msm8996.so|g' "${2}"
+        ;;
     esac
 }
 

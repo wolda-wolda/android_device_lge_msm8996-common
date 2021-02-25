@@ -136,6 +136,7 @@ vendor/lib64/librpmb.so
 vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
+vendor/lib64/libwvhidl.so
 
 # DSP
 lib/rfsa/adsp/libmorpho_image_stabilizer4_hvx_skel.so
@@ -501,12 +502,6 @@ vendor/lib/hw/vendor.lge.hardware.sysnode@1.0-client.so
 vendor/lib/hw/vendor.lge.hardware.sysnode@1.0-impl.so
 vendor/lib64/hw/vendor.lge.hardware.sysnode@1.0-client.so
 vendor/lib64/hw/vendor.lge.hardware.sysnode@1.0-impl.so
-
-# Thermal
-vendor/bin/thermal-engine
--vendor/lib/libthermalclient.so
--vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalioctl.so
 
 # Time services - from OnePlus/OnePlus3/OnePlus3:9/PKQ1.181203.001/1903190014:user/release-keys
 vendor/lib64/libtime_genoff.so|e2cef32a79f754b5a17012137cf39f53cd6e3f69

@@ -34,7 +34,6 @@
 /(vendor|system/vendor)/bin/init\.power\.sh                         u:object_r:init_power_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.graphics\.sh                u:object_r:init_graphics_exec:s0
 /(vendor|system/vendor)/bin/init\.radio\.sh                         u:object_r:init_radio_exec:s0
-/(vendor|system/vendor)/bin/init\.class_main\.sh                    u:object_r:qti_init_shell_exec:s0
 
 # IR
 /dev/ttyHSL1                                                        u:object_r:cir_device:s0

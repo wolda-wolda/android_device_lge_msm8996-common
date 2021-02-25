@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="screen_gestures_panel_summary">Szybkie ładowanie, Ambient display, KCAL</string>
+    <string name="screen_gestures_panel_summary">Szybkie ładowanie, KCAL</string>
 
     <!-- Battery -->
     <string name="battery_summary">Bateria</string>

@@ -18,7 +18,7 @@
     <string name="app_name" translatable="false">LGE Settings</string>
 
     <string name="screen_gestures_panel_title">Device Extras</string>
-    <string name="screen_gestures_panel_summary">USB Fast charge, Ambient display, KCAL</string>
+    <string name="screen_gestures_panel_summary">USB Fast charge, KCAL</string>
 
     <!-- Battery -->
     <string name="battery_summary">Battery</string>

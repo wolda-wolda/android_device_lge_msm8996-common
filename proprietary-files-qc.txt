@@ -388,20 +388,36 @@ vendor/lib64/libOmxQcelp13Dec.so|01786938265bd0de9adef15f695102333fca60a5
 vendor/lib64/libOmxWmaDec.so|32e1b9c72d0b0a8b74978e1687b701e18030d68a
 vendor/lib64/libvpplibrary.so|80c28c83ce7f9059e6ff0a521305f87ca4719985
 
-# Perf
-vendor/bin/perfd
+# Perf - from V30B H870
+lib/libqti_performance.so
+lib/libqti-at.so
+lib/libqti-perfd-client_system.so
+lib/libqti-util_system.so
+lib/vendor.qti.hardware.perf@1.0.so
+lib64/libqti_performance.so
+lib64/libqti-at.so
+lib64/libqti-perfd-client_system.so
+lib64/libqti-util_system.so
+lib64/vendor.qti.hardware.perf@1.0.so
+
 vendor/bin/energy-awareness
 vendor/bin/msm_irqbalance
-vendor/lib/libfeedbackhandler.so
+vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
+vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
+
 vendor/lib/libperfgluelayer.so
+vendor/lib/libqtigef.so
+vendor/lib/libqti-perfd.so
 vendor/lib/libqti-perfd-client.so
 vendor/lib/libqti-util.so
-vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so
-vendor/lib64/libfeedbackhandler.so
+vendor/lib/libqti-wl.so
+
 vendor/lib64/libperfgluelayer.so
+vendor/lib64/libqtigef.so
+vendor/lib64/libqti-perfd.so
 vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-util.so
-vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so
+
 
 # Peripheral manager
 vendor/bin/pm-proxy

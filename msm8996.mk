@@ -131,7 +131,8 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.target.rc \
     ueventd.qcom.rc \
-    init.class_main.sh
+    init.class_main.sh \
+    vendor.lge.power.rc
 
 # Display
 PRODUCT_PACKAGES += \

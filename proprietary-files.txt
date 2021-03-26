@@ -56,18 +56,6 @@ etc/firmware/cpp_firmware_v1_8_0.fw:vendor/firmware/cpp_firmware_v1_8_0.fw
 etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
 etc/firmware/cpp_firmware_v1_12_0.fw:vendor/firmware/cpp_firmware_v1_12_0.fw
 
-# IR
--lib/libcir_driver.so:vendor/lib/libcir_driver.so
--lib64/libcir_driver.so:vendor/lib64/libcir_driver.so
-
-# LG Keymaster
-lib/hw/lgkm.default.so
-lib/hw/lgkm.msm8996.so
-lib/liblgkm.so
-lib64/hw/lgkm.default.so
-lib64/hw/lgkm.msm8996.so
-lib64/liblgkm.so
-
 # Misc firmware
 etc/firmware/leia_pfp_470.fw:vendor/firmware/leia_pfp_470.fw
 etc/firmware/leia_pm4_470.fw:vendor/firmware/leia_pm4_470.fw

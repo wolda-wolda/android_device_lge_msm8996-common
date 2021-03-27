@@ -377,6 +377,10 @@ vendor/lib/libqti-perfd.so
 vendor/lib/libqti-perfd-client.so
 vendor/lib/libqti-util.so
 
+# Power - prebuilt
+vendor/lib/vendor.qti.hardware.perf@2.0.so|0b6f32c4300245bb4406d13ae492bcbff2866109
+vendor/lib64/vendor.qti.hardware.perf@2.0.so|a2a0fad9862a905b240edfd7694555b32fe6af37
+
 # Peripheral manager
 vendor/bin/pm-proxy
 vendor/bin/pm-service
@@ -387,12 +391,6 @@ vendor/lib64/libperipheral_client.so
 vendor/bin/mm-pp-dpps
 vendor/lib/libdisp-aba.so
 vendor/lib64/libdisp-aba.so
-
-# Power - from V30B
-vendor/bin/hw/android.hardware.power@1.2-service
-vendor/etc/init/android.hardware.power@1.2-service.rc
-vendor/lib/hw/power.default.so:vendor/lib/hw/power.msm8996.so
-vendor/lib64/hw/power.default.so:vendor/lib64/hw/power.msm8996.so
 
 # RIL stack from leeco 26.03.2021
 

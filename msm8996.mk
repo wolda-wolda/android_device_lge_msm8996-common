@@ -309,8 +309,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libjson
 
-# Power - from V30B
+# Power - AIDL
 PRODUCT_PACKAGES += \
+    android.hardware.power-service-qti \
     android.hardware.power.stats@1.0-service.mock
 
 PRODUCT_COPY_FILES += \

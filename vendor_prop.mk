@@ -148,8 +148,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.vidc.enc.disable.pq=true \
-    vendor.video.disable.ubwc=1
+    vidc.debug.perf.mode=2 \
+    vidc.enc.dcvs.extra-buff-count=2
 
 # OpenGLES
 PRODUCT_PROPERTY_OVERRIDES += \

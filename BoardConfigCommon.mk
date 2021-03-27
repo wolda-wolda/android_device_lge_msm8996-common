@@ -114,14 +114,8 @@ BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/bluetooth/libbt_vndcfg.txt
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
 
 # Camera
-TARGET_LD_SHIM_LIBS := \
-    /system/vendor/lib/hw/camera.msm8996.so|/system/vendor/lib/libshim_camera.so \
-    /system/vendor/lib/libmmcamera_ppeiscore.so|/system/vendor/lib/libshim_camera.so
 USE_CAMERA_STUB := true
 USE_DEVICE_SPECIFIC_CAMERA := true
-
-# CNE and DPM
-BOARD_USES_QCNE := true
 
 # Display
 BOARD_USES_ADRENO := true
@@ -188,7 +182,7 @@ SELINUX_IGNORE_NEVERALLOWS := true
 # Thermal
 USE_DEVICE_SPECIFIC_THERMAL := true
 
-# QTI
+# RIL
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Wi-Fi

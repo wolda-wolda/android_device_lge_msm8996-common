@@ -15,6 +15,9 @@
 # limitations under the License.
 #
 
+# LG G6 launched with N
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n.mk)
+
 # Inherit proprietary blobs
 $(call inherit-product-if-exists, vendor/lge/msm8996-common/msm8996-common-vendor.mk)
 
@@ -115,12 +118,15 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     camera.device@3.2-impl \
-    libshim_camera \
     Snap
 
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
+
+# Connectivity Engine support (CNE)
+PRODUCT_PACKAGES += \
+    libcnefeatureconfig
 
 # Device init scripts
 PRODUCT_PACKAGES += \
@@ -131,7 +137,6 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.target.rc \
     ueventd.qcom.rc \
-    init.class_main.sh \
     vendor.lge.power.rc
 
 # Display
@@ -167,6 +172,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.3-service.clearkey
+
+# fwk-detect
+PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect
 
 # Recovery
 PRODUCT_PACKAGES += \
@@ -222,16 +231,14 @@ PRODUCT_COPY_FILES += \
 
 # Privapp Whitelist
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml
+    $(LOCAL_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml \
+    $(LOCAL_PATH)/configs/system_ext-privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qti.xml \
+    $(LOCAL_PATH)/configs/system-privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml
 
 # IPACM
 PRODUCT_PACKAGES += \
     IPACM_cfg.xml \
     ipacm
-
-# IMS
-PRODUCT_PACKAGES += \
-    ims-ext-common
 
 # IRQ
 PRODUCT_COPY_FILES += \
@@ -300,6 +307,10 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-service \
     thermal.msm8996
 
+# QMI
+PRODUCT_PACKAGES += \
+    libjson
+
 # Power - from V30B
 PRODUCT_PACKAGES += \
     android.hardware.power.stats@1.0-service.mock
@@ -318,11 +329,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/perf/perf-profile5.conf:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perf-profile5.conf \
     $(LOCAL_PATH)/configs/perf/perf-profile6.conf:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perf-profile6.conf
 
-
-# Qualcomm broadcast whitelist
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
-
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_msm8996
@@ -333,8 +339,10 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
+    android.hardware.radio@1.4 \
+    android.hardware.radio.config@1.0 \
     libprotobuf-cpp-full \
-    librmnetctl
+    librmnetctl \
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
@@ -348,6 +356,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+
+# Shims
+PRODUCT_PACKAGES += \
+    libcutils_shim
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -367,14 +379,21 @@ PRODUCT_PACKAGES += \
 
 # Treble
 PRODUCT_PACKAGES += \
-    vndk-sp \
+    vndk-sp
 
 PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v28/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-full.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-full-v28.so \
+    prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-v29.so \
+    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-full.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-full-v29.so \
     prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-lite-v29.so
 
 # Telephony
 PRODUCT_PACKAGES += \
+    ims-ext-common \
+    ims_ext_common.xml \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml \
     telephony-ext
 
 PRODUCT_BOOT_JARS += \

@@ -310,8 +310,8 @@ vendor/lib/librs_adreno.so|9f0022a5c38a676a580511749bab3c538ed8b803
 vendor/lib/libRSDriver_adreno.so|51e8ebcd4584726cbee21a4486b6f37ce5e716f1
 
 # Graphics (Vulkan) - from daisy - daisy_sprout:10/QKQ1.191002.002/V11.0.2.0.QDLMIXM
-vendor/lib/hw/vulkan.msm8996.so
-vendor/lib64/hw/vulkan.msm8996.so
+lib/vulkan.msm8996.so
+lib64/vulkan.msm8996.so
 
 # Graphics (HDR) - from daisy - daisy_sprout:10/QKQ1.191002.002/V11.0.2.0.QDLMIXM
 vendor/lib64/libhdr_tm.so|c388a9b14966583cde2c682c129fcf5cfa298239

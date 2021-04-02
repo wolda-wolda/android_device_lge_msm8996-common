@@ -52,7 +52,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.lge.faceprint.inform.camera=0 \
     vendor.lge.faceprint.use.camera=0 \
-    persist.vendor.camera.expose.aux=1
+    persist.vendor.camera.expose.aux=1 \
+    camera.disable_zsl_mode=1
 
 # Charger
 PRODUCT_PRODUCT_PROPERTIES += \

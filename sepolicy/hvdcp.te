@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 allow hvdcp sysfs:file { read open };
+=======
+allow hvdcp sysfs:file { read open };
+>>>>>>> 1091d8de (msm8996-common: More sepolicy fixup)

@@ -549,34 +549,20 @@ vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
 vendor/lib/sensor_calibrate.so
 vendor/lib/sensors.ssc.so
-
 vendor/lib64/hw/activity_recognition.msm8996.so
 vendor/lib64/libsensor1.so
 vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensorndkbridge.so
 vendor/lib64/sensor_calibrate.so
 vendor/lib64/sensors.ssc.so
-
 lib/libsensor1.so
 lib/libsensor_reg_system.so
 lib/libqmi_cci_system.so
 lib/libdiag_system.so
-
 lib64/libsensor1.so
 lib64/libsensor_reg_system.so
 lib64/libqmi_cci_system.so
 lib64/libdiag_system.so
-
-# Sysnode from Stock H870 V20I
-framework/vendor.lge.hardware.sysnode-V1.0-java.jar:vendor/framework/vendor.lge.hardware.sysnode-V1.0-java.jar
-lib/vendor.lge.hardware.sysnode@1.0.so:vendor/lib/vendor.lge.hardware.sysnode@1.0.so
-lib64/vendor.lge.hardware.sysnode@1.0.so:vendor/lib64/vendor.lge.hardware.sysnode@1.0.so
-vendor/bin/hw/vendor.lge.hardware.sysnode@1.0-service
-vendor/etc/init/vendor.lge.hardware.sysnode-1.0-service.rc
-vendor/lib/hw/vendor.lge.hardware.sysnode@1.0-client.so
-vendor/lib/hw/vendor.lge.hardware.sysnode@1.0-impl.so
-vendor/lib64/hw/vendor.lge.hardware.sysnode@1.0-client.so
-vendor/lib64/hw/vendor.lge.hardware.sysnode@1.0-impl.so
 
 # Time services - from OnePlus/OnePlus3/OnePlus3:9/PKQ1.181203.001/1903190014:user/release-keys
 vendor/lib64/libtime_genoff.so|e2cef32a79f754b5a17012137cf39f53cd6e3f69

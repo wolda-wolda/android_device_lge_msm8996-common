@@ -23,70 +23,23 @@ include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
 
-# CPPF Images
-CPPF_IMAGES := \
-    cppf.b00 cppf.b01 cppf.b02 cppf.b03 cppf.b04 \
-    cppf.b05 cppf.b06 cppf.mdt
+# builds require us to create the mount points at compile time.
+# Just creating it for all cases since it does not hurt.
+FIRMWARE_MOUNT_POINT := $(TARGET_OUT_VENDOR)/firmware_mnt
 
-CPPF_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(CPPF_IMAGES)))
-$(CPPF_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "CPPF firmware link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /persist-lg/firmware/$(notdir $@) $@
+$(FIRMWARE_MOUNT_POINT):
+	@echo "Creating $(FIRMWARE_MOUNT_POINT)"
+	@mkdir -p $(TARGET_OUT_VENDOR)/firmware_mnt
+ifneq ($(TARGET_MOUNT_POINTS_SYMLINKS),false)
+	@ln -sf /vendor/firmware_mnt $(TARGET_OUT_VENDOR)/f
+endif
 
-ALL_DEFAULT_INSTALLED_MODULES += $(CPPF_SYMLINKS)
-# END CPPF Images
-
-# DXHDCP2 Images
-DXHDCP2_IMAGES := \
-    dxhdcp2.b00 dxhdcp2.b01 dxhdcp2.b02 dxhdcp2.b03 dxhdcp2.b04 \
-    dxhdcp2.b05 dxhdcp2.b06 dxhdcp2.mdt
-
-DXHDCP2_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(DXHDCP2_IMAGES)))
-$(DXHDCP2_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "DXHDCP2 firmware link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /firmware/image/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(DXHDCP2_SYMLINKS)
-# END DXHDCP2 Images
-
-# HASHSTORE Images
-HASHSTORE_IMAGES := \
-    hashstor.b00 hashstor.b01 hashstor.b02 hashstor.b03 hashstor.b04 \
-    hashstor.b05 hashstor.b06 hashstor.mdt
-
-HASHSTORE_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(HASHSTORE_IMAGES)))
-$(HASHSTORE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "HASHSTORE firmware link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /firmware/image/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(HASHSTORE_SYMLINKS)
-# END HASHSTORE Images
-
-# SECUREKS Images
-SECUREKS_IMAGES := \
-    secureks.b00 secureks.b01 secureks.b02 secureks.b03 secureks.b04 \
-    secureks.b05 secureks.b06 secureks.mdt
-
-SECUREKS_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(SECUREKS_IMAGES)))
-$(SECUREKS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "SECUREKS firmware link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /firmware/image/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(SECUREKS_SYMLINKS)
-# END SECUREKS Images
+ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_MOUNT_POINT)
 
 # WIDEVINE Images
 WIDEVINE_IMAGES := \
     widevine.b00 widevine.b01 widevine.b02 widevine.b03 widevine.b04 \
-    widevine.b05 widevine.b06 widevine.mdt
+    widevine.b05 widevine.b06 widevine.b07 widevine.mdt
 
 WIDEVINE_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(WIDEVINE_IMAGES)))
 $(WIDEVINE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)

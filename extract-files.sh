@@ -65,6 +65,40 @@ function blob_fixup() {
     vendor/etc/permissions/qti-vzw-ims-internal.xml)
         sed -i -e 's|file="/system/vendor/|file="/vendor/|g' "${2}"
         ;;
+    
+    # firmware_mnt
+
+    vendor/lib/libcppf.so)
+        # binhaxxed to load cppf firmware from /vendor/firmware/
+        sed -i -e 's|/system/etc/firmware|/vendor/firmware\x0\x0\x0\x0|g' "${2}"
+        # Hex edit /firmware/image to /vendor/firmware_mnt to delete the outdated rootdir symlinks
+        sed -i "s|/firmware/image|/vendor/f/image|g" "${2}"
+        ;;
+
+        # Hex edit /firmware/image to /vendor/firmware_mnt to delete the outdated rootdir symlinks
+    vendor/lib/hw/gatekeeper.msm8996.so | vendor/lib/hw/keystore.msm8996.so)
+        sed -i "s|/firmware/image|/vendor/f/image|g" "${2}"
+        ;;
+
+        # Hex edit /firmware/image to /vendor/firmware_mnt to delete the outdated rootdir symlinks
+    vendor/lib64/hw/gatekeeper.msm8996.so | vendor/lib64/hw/keystore.msm8996.so)
+        sed -i "s|/firmware/image|/vendor/f/image|g" "${2}"
+        ;;
+    
+    vendor/lib64/libSecureUILib.so)
+        # Hex edit /firmware/image to /vendor/firmware_mnt to delete the outdated rootdir symlinks
+        sed -i "s|/firmware/image|/vendor/f/image|g" "${2}"
+        ;;
+
+    vendor/lib/liboemcrypto.so)
+        # Hex edit /firmware/image to /vendor/firmware_mnt to delete the outdated rootdir symlinks
+        sed -i "s|/firmware/image|/vendor/f/image|g" "${2}"
+        ;;
+
+    vendor/lib64/hw/fingerprint.msm8996.so)
+        # Hex edit /firmware/image to /vendor/firmware_mnt to delete the outdated rootdir symlinks
+        sed -i "s|/firmware/image|/vendor/f/image|g" "${2}"
+        ;;
     esac
 }
 

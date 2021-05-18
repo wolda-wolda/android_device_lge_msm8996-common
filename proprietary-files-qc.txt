@@ -158,33 +158,54 @@ vendor/etc/init/dpmQmiMgr.rc
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/libdpmqmihal.so
 
-# DRM
+# DRM - from V30B H870
+vendor/bin/cpfirmware
 vendor/bin/qseecomd
-vendor/lib/libcppf.so
-vendor/lib/liboemcrypto.so
+vendor/lib/libGPreqcancel.so
+vendor/lib/libGPreqcancel_svc.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libStDrvInt.so
+vendor/lib/libbase64.so
+vendor/lib/libcpion.so
+vendor/lib/libdrmfs.so
+vendor/lib/libdrmtime.so
+vendor/lib/libhdcpsrm.so
+vendor/lib/liboemcrypto.so
 vendor/lib/libqisl.so
+vendor/lib/librmp.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
-vendor/lib64/libspl.so
+vendor/lib/libtzdrmgenprov.so
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/libSecureUILib.so
 vendor/lib64/libStDrvInt.so
+vendor/lib64/libbase64.so
+vendor/lib64/libcpion.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
+vendor/lib64/libhdcpsrm.so
+vendor/lib64/liboemcrypto.so
 vendor/lib64/libqisl.so
+vendor/lib64/librmp.so
 vendor/lib64/librpmb.so
-vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
+vendor/lib64/libtzdrmgenprov.so
 vendor/lib64/libwvhidl.so
 
-# DRM - TUI
+# DRM - TUI from V30B
+vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
+vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so
+lib/vendor.qti.hardware.tui_comm@1.0.so
+lib64/vendor.qti.hardware.tui_comm@1.0.so
+
+# DRM (Widevine) - from V30B H870
+vendor/bin/hw/android.hardware.drm@1.1-service.widevine
+vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
 
 # DSP - from Stock H870 V30B
 vendor/lib/rfsa/adsp/AlacDecoderModule.so.1
@@ -567,10 +588,6 @@ lib64/libdiag_system.so
 # Time services - from OnePlus/OnePlus3/OnePlus3:9/PKQ1.181203.001/1903190014:user/release-keys
 vendor/lib64/libtime_genoff.so|e2cef32a79f754b5a17012137cf39f53cd6e3f69
 vendor/lib/libtime_genoff.so|24f6064818bc53c5ea17a3608766e3cc1e889f64
-
-# DRM (Widevine) - from daisy - daisy_sprout:10/QKQ1.191002.002/V11.0.7.0.QDLMIXM
-vendor/bin/hw/android.hardware.drm@1.2-service.widevine|e130b8f1c8d46d8a185b00cba5ff8a2a871ee94c
-vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|f206aecdd6843795f6
 
 # WiFi Display -- From daisy_global_images_V11.0.17.0.QDLMIXM_20210115.0000.00_10.0_924a02b328
 bin/wfdservice|934817e5689fe6f8b54032902de58c203b8ec2e7

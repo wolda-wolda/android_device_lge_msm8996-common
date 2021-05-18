@@ -94,11 +94,6 @@ function blob_fixup() {
         # Hex edit /firmware/image to /vendor/firmware_mnt to delete the outdated rootdir symlinks
         sed -i "s|/firmware/image|/vendor/f/image|g" "${2}"
         ;;
-
-    vendor/lib64/hw/fingerprint.msm8996.so)
-        # Hex edit /firmware/image to /vendor/firmware_mnt to delete the outdated rootdir symlinks
-        sed -i "s|/firmware/image|/vendor/f/image|g" "${2}"
-        ;;
     esac
 }
 

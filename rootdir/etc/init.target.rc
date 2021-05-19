@@ -120,7 +120,7 @@ on post-fs-data
     chmod 2770 /data/system/perfd
 
     # Create camera dir for EEPROM data
-    mkdir mnt/vendor/persist-lg/camera 0771 cameraserver radio
+    mkdir /persist-lg/camera 0771 cameraserver radio
 
     # Create folder of camera
     mkdir /data/vendor/camera 0770 camera camera

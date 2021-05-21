@@ -1,2 +1,1 @@
-set_prop(hvdcp, hvdcp_opti_prop)
 allow hvdcp sysfs:file { read open };

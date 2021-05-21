@@ -1,1 +1,1 @@
-allow priv_app hvdcp_opti_prop:file read;
+allow priv_app vendor_hvdcp_opti_prop:file read;
